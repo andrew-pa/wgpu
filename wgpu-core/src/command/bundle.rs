@@ -908,8 +908,8 @@ impl<G: GlobalIdentityHandlerFactory> Global<G> {
                 base: BasePass {
                     commands,
                     dynamic_offsets: state.flat_dynamic_offsets,
-                    string_data: Vec::new(),
-                    push_constant_data: Vec::new(),
+                    string_data: base.string_data.to_vec(),
+                    push_constant_data: base.push_constant_data.to_vec(),
                 },
                 device_id: Stored {
                     value: id::Valid(bundle_encoder.parent_id),
